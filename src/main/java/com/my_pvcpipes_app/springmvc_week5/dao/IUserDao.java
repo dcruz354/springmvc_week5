@@ -13,4 +13,6 @@ import com.my_pvcpipes_app.springmvc_week5.model.User;
 public interface IUserDao {
 	  void register(User user);
 	  User validateUser(Login login);
+	  public User findUserByUsername(String username);
+	  public void updateUser(User user);
 	}

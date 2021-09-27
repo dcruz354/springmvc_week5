@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -37,6 +38,17 @@ public class UserDaoImpl implements IUserDao {
 		    + "'";
 		    List<User> users = jdbcTemplate.query(sql, new UserMapper());
 		    return users.size() > 0 ? users.get(0) : null;
+		    }
+		    
+		    public User findUserByUsername(String username) {
+		    	String sql = "select * FROM users WHERE username = :username";
+				return jdbcTemplate.queryForObject(sql, new Object[] {username}, new BeanPropertyRowMapper<User>(User.class));
+		    	
+		    }
+		    
+		    public void updateUser(User user) {
+		    	String sql = "UPDATE users SET password= :password, firstname= :firstname, lastname = :lastname, email = :email WHERE username = :username";
+		    	jdbcTemplate.update(sql);
 		    }
 }
 

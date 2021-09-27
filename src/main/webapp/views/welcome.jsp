@@ -17,6 +17,8 @@
             <tr>
                 <td><a href="home.jsp">Home</a>
                 </td>
+                                <td><a href="user_form.jsp">Update</a>
+                </td>
             </tr>
         </table>
     </body>
