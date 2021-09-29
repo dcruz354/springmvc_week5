@@ -6,7 +6,8 @@
             <title>Update</title>
         </head>
         <body>
-            <form:form id="updateForm" modelAttribute="user"  action="update" method="get">
+        Hello test
+<%--              <form:form id="updateForm" modelAttribute="user"  action="update" method="get">
                 <table align="center">
                     <tr>
                         <td>
@@ -53,6 +54,6 @@
                         </td>
                     </tr>
                 </table>
-            </form:form>
+            </form:form>  --%>
         </body>
         </html>
